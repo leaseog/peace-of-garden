@@ -21,7 +21,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top, #f9fff7 0%, var(--bg) 40%, #eef7ff 100%);
+  background: radial-gradient(circle at top, #f9fff7 0%, var(--bg) 40%, #b1ffef 100%);
   
   min-height: 100vh;
   display: flex;
@@ -99,14 +99,14 @@ main.game-main {
 
 /* ---------- 정원 / 씨앗 영역 ---------- */
 .garden-panel {
-  background: linear-gradient(to bottom, #f9fff9, #f9fffb);
+  background: linear-gradient(to bottom, #ffffff, #f2fdef);
   border-radius: 20px;
   padding: 18px 18px 20px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 12px;
-  border: 1px solid rgba(179, 255, 192, 0.35);
+  border: 1px solid rgba(27, 170, 8, 0.4);
 }
 
 .garden-heading {
@@ -124,7 +124,7 @@ main.game-main {
   padding: 18px 12px 16px;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(173, 238, 162, 0.45);
+  border: 1px solid rgba(122, 186, 111, 0.45);
 }
 
 .drop-hint {
@@ -143,14 +143,14 @@ main.game-main {
   width: min(280px, 100%);
   height: 260px;
   border-radius: 500px;
-  background: radial-gradient(circle at top, #ffffff 0%, #e3fbd5 45%, #bdeebd 100%);
-  box-shadow: inset 0 12px 26px rgba(127, 239, 99, 0.7),
-    0 22px 40px rgba(149, 169, 132, 0.35);
+  background: radial-gradient(circle at top, #ffffff 0%, #e1f5c5 45%, #c0f1b1 100%);
+  box-shadow: inset 0 12px 26px rgba(131, 188, 77, 0.7),
+    0 22px 40px rgba(139, 151, 117, 0.35);
   display: flex;
   align-items: center;   /* 가운데 정렬 */
   justify-content: center;
   padding-bottom: 0;     /* 전에는 plant-body 기준이라서 필요했는데, 지금은 0으로 둬도 됨 */
-  border: 0px solid rgba(255, 93, 176, 0.45);
+  border: 0px solid rgba(93, 255, 112, 0.45);
 }
 
 
@@ -179,85 +179,6 @@ main.game-main {
   display: block;
 }
 
-
-/* ---------- 식물 단계별 스타일 (추상적 그래픽) ---------- */
-
-.plant-body {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* 공통: 줄기 */
-.stem {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  width: 6px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: linear-gradient(to top, #6bbf7a, #9edc9f);
-  transition: height 0.3s ease;
-}
-
-/* 공통: 잎 2개 */
-.leaf {
-  position: absolute;
-  bottom: 52px;
-  width: 36px;
-  height: 18px;
-  border-radius: 999px;
-  background: linear-gradient(to right, #8ed9a0, #baf2c4);
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.leaf.left {
-  right: 50%;
-  transform-origin: right center;
-}
-
-.leaf.right {
-  left: 50%;
-  transform-origin: left center;
-}
-
-/* 공통: 꽃/봉오리 */
-.bloom {
-  position: absolute;
-  bottom: 132px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.7);
-  width: 76px;
-  height: 76px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 28%, #ffe8f1 0%, #ffc2dd 30%, #ffb0d4 55%, #ff9dce 100%);
-  box-shadow: 0 0 0 0 rgba(255, 181, 218, 0.6);
-  opacity: 0;
-  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.6s ease;
-}
-
-.bloom-center {
-  position: absolute;
-  inset: 22px;
-  border-radius: inherit;
-  background: radial-gradient(circle, #fff7da 0%, #ffe39d 40%, #ffd472 100%);
-  box-shadow: 0 0 14px rgba(255, 214, 140, 0.7);
-}
-
-/* 씨앗 */
-.seed {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  width: 26px;
-  height: 26px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #fff7e8 0%, #f2cfa3 38%, #e1a969 100%);
-  box-shadow: 0 4px 8px rgba(162, 124, 76, 0.36);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
 /* 단계 0: 씨앗만 */
 .stage-0 .stem {
@@ -369,7 +290,7 @@ main.game-main {
 .stage-4 .bloom {
   opacity: 1;
   transform: translateX(-50%) scale(1);
-  box-shadow: 0 0 18px rgba(255, 181, 218, 0.9);
+  box-shadow: 0 0 18px rgba(201, 255, 181, 0.9);
 }
 
 .stage-4 .seed {
@@ -389,8 +310,8 @@ margin-top: 14px;
   gap: 4px;
   padding: 8px 10px 10px;
   border-radius: 14px;
-  background: rgba(255, 230, 242, 0.8);
-  border: 1px solid rgba(255, 160, 207, 0.5);
+  background: rgba(218, 253, 232, 0.8);
+  border: 1px solid rgba(41, 188, 102, 0.5);
   backdrop-filter: blur(4px);
 }
 
@@ -402,7 +323,7 @@ font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #d55dd7;
+  color: #226808;
 }
 
 .stage-phrase {
@@ -480,7 +401,7 @@ font-size: 0.88rem;
   font-size: 0.86rem;
   cursor: grab;
   background: #e6f5b9;
-  color: #4a4663;
+  color: #455133;
   box-shadow: 0 2px 6px rgba(19, 108, 3, 0.25);
   transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
   user-select: none;
