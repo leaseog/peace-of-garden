@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Garden of Peace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/bqu3kwk.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div class="title-row">
+        <h1 class="game-title">Garden of Peace</h1>
+      </div>
+      <p class="game-subtitle">
+        Peace begins quietly inside the mind and spreads outward like a ripple. Drag words onto the seed to see which ones gently help it bloom.
+      </p>
+    </header>
+
+    <main class="game-main">
+  <!-- 왼쪽: 정원 / 씨앗 -->
+  <section class="garden-panel">
+    <div class="garden-heading">Inner Garden</div>
+
+    <div class="plant-wrapper">
+      <div class="drop-hint">Drop words here ↓</div>
+
+      <!-- 드롭 존 -->
+      <div class="plant-drop-zone stage-0" id="plantDropZone">
+        <div class="plant-graphic" id="plantGraphic">
+          <!-- 여기 이미지 6단계로 바꿀 예정 -->
+          <img id="plantImage" src="img/stage-0.png" alt="plant stage">
+        </div>
+
+        <!-- 나비 -->
+        <div class="butterfly" id="butterfly">🦋</div>
+      </div>
+
+      <!-- 단계 텍스트 -->
+      <div class="stage-text-block">
+        <div class="stage-label" id="stageLabel">Seed · Inner Calm</div>
+        <div class="stage-phrase" id="stagePhrase">
+          A quiet seed rests beneath the surface, waiting for gentle words.
+        </div>
+        <div class="micro-text">
+          Positive words help the plant grow. Harsh words can make it hesitate or wilt a little.
+        </div>
+      </div>
+
+      <div class="message-banner" id="messageBanner"></div>
+    </div>
+  </section>
+
+  <!-- 오른쪽: 단어 리스트 -->
+  <section class="words-panel">
+    <div class="words-heading">Words to Drop</div>
+    <p class="words-sub">
+      Which words nourish peace, and which ones disturb it? Try dragging them onto the garden.
+    </p>
+
+    <div class="word-list" id="wordList">
+      <!-- positive (inner attitude) -->
+      <button class="word-chip" draggable="true" data-word="kindness">kindness</button>
+      <button class="word-chip" draggable="true" data-word="patience">patience</button>
+      <button class="word-chip" draggable="true" data-word="understanding">understanding</button>
+      <button class="word-chip" draggable="true" data-word="empathy">empathy</button>
+      <button class="word-chip" draggable="true" data-word="calm">calm</button>
+      <button class="word-chip" draggable="true" data-word="gentleness">gentleness</button>
+      <button class="word-chip" draggable="true" data-word="listening">listening</button>
+      <button class="word-chip" draggable="true" data-word="harmony">harmony</button>
+      <button class="word-chip" draggable="true" data-word="compassion">compassion</button>
+      <button class="word-chip" draggable="true" data-word="warmth">warmth</button>
+      <button class="word-chip" draggable="true" data-word="gratitude">gratitude</button>
+      <button class="word-chip" draggable="true" data-word="forgiveness">forgiveness</button>
+      <button class="word-chip" draggable="true" data-word="balance">balance</button>
+      <button class="word-chip" draggable="true" data-word="trust">trust</button>
+      <button class="word-chip" draggable="true" data-word="love">love</button>
+      <button class="word-chip" draggable="true" data-word="acceptance">acceptance</button>
+      <button class="word-chip" draggable="true" data-word="mindfulness">mindfulness</button>
+      <button class="word-chip" draggable="true" data-word="serenity">serenity</button>
+      <button class="word-chip" draggable="true" data-word="hope">hope</button>
+      <button class="word-chip" draggable="true" data-word="respect">respect</button>
+      <button class="word-chip" draggable="true" data-word="clarity">clarity</button>
+      <button class="word-chip" draggable="true" data-word="opnenness">opnenness</button>
+      <button class="word-chip" draggable="true" data-word="ternderness">ternderness</button>
+      <button class="word-chip" draggable="true" data-word="appreciation">appreciation</button>
+      <button class="word-chip" draggable="true" data-word="generosity">generosity</button>
+      <button class="word-chip" draggable="true" data-word="honesty">honesty</button>
+      <button class="word-chip" draggable="true" data-word="stillness">stillness</button>
+      <button class="word-chip" draggable="true" data-word="unity">unity</button>
+      <button class="word-chip" draggable="true" data-word="contentment">contentment</button>
+      <button class="word-chip" draggable="true" data-word="joy">joy</button>
+      <button class="word-chip" draggable="true" data-word="peace">peace</button>
+
+
+      <!-- negative -->
+      <button class="word-chip" draggable="true" data-word="anger">anger</button>
+      <button class="word-chip" draggable="true" data-word="fear">fear</button>
+      <button class="word-chip" draggable="true" data-word="blame">blame</button>
+      <button class="word-chip" draggable="true" data-word="rush">rush</button>
+      <button class="word-chip" draggable="true" data-word="chaos">chaos</button>
+      <button class="word-chip" draggable="true" data-word="noise">noise</button>
+      <button class="word-chip" draggable="true" data-word="judgment">judgment</button>
+      <button class="word-chip" draggable="true" data-word="harshness">harshness</button>
+      <button class="word-chip" draggable="true" data-word="stress">stress</button>
+      <button class="word-chip" draggable="true" data-word="conflit">conflit</button>
+      <button class="word-chip" draggable="true" data-word="impatience">impatience</button>
+      <button class="word-chip" draggable="true" data-word="resentment">resentment</button>
+      <button class="word-chip" draggable="true" data-word="greed">greed</button>
+      <button class="word-chip" draggable="true" data-word="envy">envy</button>
+      <button class="word-chip" draggable="true" data-word="hatred">hatred</button>
+      <button class="word-chip" draggable="true" data-word="selfishness">selfishness</button>
+      <button class="word-chip" draggable="true" data-word="arrogance">arrogance</button>
+      <button class="word-chip" draggable="true" data-word="doubt">doubt</button>
+      <button class="word-chip" draggable="true" data-word="anxiety">anxiety</button>
+      <button class="word-chip" draggable="true" data-word="frustration">frustration</button>
+
+    </div>
+  </section>
+</main>
+
+
+    <footer class="game-footer">
+      <span>Tip: Try mixing different words and notice how the garden responds.</span>
+      <span>Concept: inner peace → outer bloom.</span>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
